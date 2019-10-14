@@ -87,13 +87,16 @@ def initialize_parameters():
     W1 = tf.get_variable(name= "W1", shape= [20,19200], initializer = tf.contrib.layers.xavier_initializer())
     b1 = tf.get_variable(name= "b1", shape= [20,1], initializer = tf.zeros_initializer())
     W2 = tf.get_variable(name= "W2", shape= [9,20], initializer = tf.contrib.layers.xavier_initializer())
-    
+    b1 = tf.get_variable(name= "b2", shape= [9,1], initializer = tf.zeros_initializer())
     W3 = tf.get_variable(name= "W3", shape= [2,9], initializer = tf.contrib.layers.xavier_initializer())
+    b1 = tf.get_variable(name= "b3", shape= [2,1], initializer = tf.zeros_initializer())
 
     parameters = {"W1": W1,
                   "b1": b1,
                   "W2": W2,
-                  "W3": W3,}
+                  "b2":b2,
+                  "W3": W3,
+                 "b3":b3,}
     return parameters
 
 #forward prop 
